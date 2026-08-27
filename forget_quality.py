@@ -53,10 +53,9 @@ def main():
     print(f"[*] Loading model from: {args.model_path}")
     model = AutoModelForCausalLM.from_pretrained(
         args.model_path,
-        device_map="auto",
         torch_dtype=torch.bfloat16, 
         trust_remote_code=True
-    )
+    ).to(device)
     
     model.eval()
     for param in model.parameters():

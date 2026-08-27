@@ -10,6 +10,8 @@
 #SBATCH --cpus-per-task=16
 #SBATCH --mem=128G
 
+
+
 /home/ritsu/miniconda3/envs/simnpo/bin/python forget_quality.py \
     --model_path "HuyTran1301/SimNPO_Codellama" \
     --input_file "../Data-Collection/codellama/D_test.json" \
