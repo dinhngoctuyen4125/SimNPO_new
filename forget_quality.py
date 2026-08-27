@@ -80,7 +80,7 @@ def main():
         batch_meta = []
 
         for item in batch_data:
-            code_context = item.get("probing input new", "")
+            code_context = item.get("probing input", "")
 
             encoded_context = tokenizer.encode(code_context, add_special_tokens=False)
             if len(encoded_context) > args.max_prompt_length - 200:
