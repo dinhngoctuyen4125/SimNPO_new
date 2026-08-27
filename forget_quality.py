@@ -45,7 +45,8 @@ def main():
     print(f"[*] Loading tokenizer from: {args.model_path}")
     tokenizer = AutoTokenizer.from_pretrained(
         args.model_path,
-        trust_remote_code=True
+        trust_remote_code=True,
+        use_fast=False
     )
     tokenizer.pad_token = tokenizer.eos_token
     tokenizer.padding_side = "left"
