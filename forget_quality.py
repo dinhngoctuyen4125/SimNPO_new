@@ -49,6 +49,7 @@ def main():
     )
     tokenizer.pad_token = tokenizer.eos_token
     tokenizer.padding_side = "left"
+    tokenizer.truncation_side = "left"
 
     print(f"[*] Loading model from: {args.model_path}")
     model = AutoModelForCausalLM.from_pretrained(
@@ -81,12 +82,6 @@ def main():
 
         for item in batch_data:
             code_context = item.get("probing input new", "")
-
-            encoded_context = tokenizer.encode(code_context, add_special_tokens=False)
-            if len(encoded_context) > args.max_prompt_length - 200:
-                encoded_context = encoded_context[-(args.max_prompt_length - 200):]
-                code_context = tokenizer.decode(encoded_context, skip_special_tokens=True).replace("\u0120", " ").replace("\u010a", "\n")
-                
             prompt_text = code_context
             
             batch_prompts.append(prompt_text)

@@ -8,4 +8,4 @@
     --max_new_tokens 300 \
     --temperature 0.0 \
     --top_p 0.8 \
-    --max_prompt_length 512
+    --max_prompt_length 1024
