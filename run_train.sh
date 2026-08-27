@@ -2,7 +2,7 @@
 
 /home/ritsu/miniconda3/envs/simnpo/bin/python SimNPO.py \
     --model_name "codellama/CodeLlama-7b-hf" \
-    --file_path "./data/codellama/D_forget.json" \
+    --file_path "../Data-Collection/codellama/D_forget.json" \
     --output_dir "./outputs/simnpo_checkpoints" \
     --final_model_dir "./outputs/simnpo_final" \
     --batch_size 4 \
