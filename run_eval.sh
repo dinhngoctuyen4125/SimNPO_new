@@ -1,17 +1,5 @@
 #!/bin/bash
 
-#SBATCH --job-name=simnpo_eval
-#SBATCH --output=logs/output_%j.log
-#SBATCH --error=logs/error_%j.log
-#SBATCH --partition=defq
-#SBATCH --qos=short
-#SBATCH --time=24:00:00
-#SBATCH --gres=gpu:1
-#SBATCH --cpus-per-task=16
-#SBATCH --mem=128G
-
-
-
 /home/ritsu/miniconda3/envs/simnpo/bin/python forget_quality.py \
     --model_path "HuyTran1301/SimNPO_Codellama" \
     --input_file "../Data-Collection/codellama/D_test.json" \
